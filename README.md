@@ -42,8 +42,11 @@ Một giải pháp tốt nên có ít bước và chi phí nhỏ nhất (nếu x
 
 ✅ Nhận xét tổng quan:
 Với 8-Puzzle, do không gian trạng thái không quá lớn, BFS hoặc IDS thường là lựa chọn tốt.
+
 DFS ít hiệu quả vì dễ đi sai hướng và tốn thời gian.
+
 UCS hữu ích nếu bài toán có chi phí bước đi khác nhau.
+
 IDS là lựa chọn hợp lý nếu muốn giảm bộ nhớ mà vẫn tìm được lời giải ngắn.
 
 ### 2.2. Các thuật toán Tìm kiếm có thông tin (A* Search, IDA*, Greedy Best-First Search)
@@ -54,6 +57,7 @@ IDS là lựa chọn hợp lý nếu muốn giảm bộ nhớ mà vẫn tìm đ�
 | **IDA\***                    | Kết hợp độ sâu và heuristic → giảm bộ nhớ so với A\*          | Có thể chạy lại nhiều lần → tốn thời gian hơn A\*       | Kết quả đúng (24 bước), thời gian \~0.70s             |
 
 ✅ Tổng kết:
+
 Greedy tuy nhanh nhất nhưng tạo ra lời giải kém chất lượng nhất (nhiều bước) do chỉ quan tâm đến heuristic mà bỏ qua chi phí thực.
 
 A* là lựa chọn tối ưu nhất trong trường hợp này: vừa nhanh, vừa tìm lời giải ngắn.
@@ -61,6 +65,7 @@ A* là lựa chọn tối ưu nhất trong trường hợp này: vừa nhanh, v�
 IDA* là một thay thế cho A* khi bộ nhớ hạn chế, chấp nhận thời gian lâu hơn một chút.
 
 🧠 Ghi chú:
+
 Tất cả các thuật toán này dùng heuristic, phổ biến nhất là:
 
 h(n) = tổng khoảng cách Manhattan từ mỗi ô về đúng vị trí trong goal.
@@ -84,6 +89,7 @@ Greedy chỉ dùng f(n) = h(n)
 | **Genetic Algorithm**             | Khám phá mạnh nhờ đột biến và lai ghép              | Ngẫu nhiên cao, không đảm bảo tìm ra lời giải, cần thử nhiều lần   | Rất hiếm khi giải ra, kết quả không ổn định   |
 
 ✅ Tổng kết:
+
 Các thuật toán cục bộ rất phù hợp để chạy nhanh trên không gian lớn, nhưng không đảm bảo luôn tìm được lời giải, nhất là khi:
 
 Không có cơ chế thoát khỏi local minima
@@ -124,7 +130,7 @@ Tức là: nếu bắt đầu từ bất kỳ trạng thái nào trong initial_b
 | Hành động phản hồi  | Có thể điều chỉnh theo kết quả quan sát | Không thể điều chỉnh (vì không quan sát được) |
 | Kế hoạch            | Có thể phân nhánh (contingent)          | Phải cố định cho mọi khả năng (conformant)    |
 
-🧠 Ví dụ minh họa đơn giản (8-Puzzle): Bạn cần tìm một chuỗi hành động duy nhất sao cho: sau khi áp dụng nó lên mọi khả năng, tất cả kết quả đều đúng đích.
+🧠 Ví dụ minh họa đơn giản (8-Puzzle): Cần tìm một chuỗi hành động duy nhất sao cho: sau khi áp dụng nó lên mọi khả năng, tất cả kết quả đều đúng đích.
 
 ### 2.5. Tìm kiếm với quan sát một phần: Trạng thái niềm tin (Belief State)
 
@@ -152,17 +158,17 @@ Solution là một kế hoạch có điều kiện (contingent plan), gồm các
 
 Tức là:
 
-Không phải một chuỗi cố định [a1, a2, ..., an]
+- Không phải một chuỗi cố định [a1, a2, ..., an]
 
-Mà là một cây kế hoạch dạng:
+- Mà là một cây kế hoạch dạng:
 
-Thực hiện a1
+ - Thực hiện a1
 
-→ nếu quan sát o1: làm a2
+  - → nếu quan sát o1: làm a2
 
-→ nếu quan sát o2: làm a3
+  - → nếu quan sát o2: làm a3
 
-...
+  - ...
 
 Kế hoạch phải đảm bảo rằng: Dù agent bắt đầu ở bất kỳ trạng thái nào phù hợp với thông tin ban đầu, sau một chuỗi hành động và quan sát, agent sẽ biết chắc mình đang ở trạng thái goal.
 

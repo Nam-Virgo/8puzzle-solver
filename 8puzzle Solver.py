@@ -30,7 +30,6 @@ def bfs(start, goal):
                 queue.append((new_state, path + [new_state]))
     return None
 
-
 # Thuật toán DFS (Depth First Search)
 def dfs(start, goal, max_depth=50):
     print("\n🔍 Đang chạy DFS...")

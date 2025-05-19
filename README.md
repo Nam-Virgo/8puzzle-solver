@@ -6,6 +6,22 @@ Xây dựng một công cụ trực quan giúp người dùng giải bài toán 
 
 ### 2.1. Các thuật toán Tìm kiếm không có thông tin (BFS, DFS, IDS, UCS)
 
+##### Giải thuật BFS
+
+![BFS Animation](images/bfs.gif)
+
+##### Giải thuật DFS
+
+![DFS Animation](images/dfs.gif)
+
+##### Giải thuật IDS
+
+![IDS Animation](images/ids.gif)
+
+##### Giải thuật UCS
+
+![UCS Animation](images/ucs.gif)
+
 #### 2.1.1. Các thành phần chính của bài toán tìm kiếm
 Trong bài toán 8-Puzzle, khi áp dụng các thuật toán tìm kiếm không có thông tin, các thành phần chính được xác định như sau:
 
@@ -53,6 +69,17 @@ UCS hữu ích nếu bài toán có chi phí bước đi khác nhau.
 IDS là lựa chọn hợp lý nếu muốn giảm bộ nhớ mà vẫn tìm được lời giải ngắn.
 
 ### 2.2. Các thuật toán Tìm kiếm có thông tin (A* Search, IDA*, Greedy Best-First Search)
+##### Giải thuật A* Search
+
+![A* Search Animation](images/astar.gif)
+
+##### Giải thuật IDA*
+
+![IDA* Animation](images/idastar.gif)
+
+##### Giải thuật Greedy Best-First Search
+
+![Greedy Animation](images/greedy.gif)
 
 ![Informed Search](images/informed_search_results.jpg)
 
@@ -83,6 +110,26 @@ Greedy chỉ dùng f(n) = h(n)
 ### 2.3. Các thuật toán Tìm kiếm cục bộ
 (Simple Hill Climbing, Steepest Ascent Hill Climbing, Stochastic Hill Climbing, Simulated Annealing, Local Beam Search, Genetic Algorithm)
 
+##### Giải thuật Simple Hill Climbing
+
+![Simple Hill Climbing Animation](images/simpleHC.gif)
+
+##### Giải thuật Steepest Ascent Hill Climbing
+
+![Steepest Ascent Hill Climbing Animation](images/steepestHC.gif)
+
+##### Giải thuật Stochastic Hill Climbing
+
+![Stochastic Hill Climbing Animation](images/stochasticHC.gif)
+
+##### Giải thuật Simulated Annealing
+
+![Simulated Annealing Animation](images/simu_anne.gif)
+
+##### Giải thuật Local Beam Search
+
+![Local Beam Search Animation](images/beam.gif)
+
 ![Local Search Results](images/local_search_results.jpg)
 
 📌 Nhận xét về hiệu suất khi áp dụng vào trò chơi 8 ô chữ:
@@ -109,7 +156,9 @@ Steepest Ascent HC và Stochastic HC là những lựa chọn khá hiệu quả,
 Simulated Annealing và Genetic Algorithm cần tối ưu tham số, chạy nhiều lần, và vẫn không đảm bảo thành công.
 
 ### 2.4. Tìm kiếm mà không quan sát: Trạng thái niềm tin (Belief State)
+##### Giải thuật UCS
 
+![Belief State Animation](images/belief_bfs.gif)
 #### 2.4.1. Các thành phần chính của bài toán tìm kiếm (trong môi trường không quan sát)
 
 | Thành phần                                        | Mô tả                                                                                                                                                        |

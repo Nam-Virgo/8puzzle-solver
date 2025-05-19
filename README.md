@@ -33,6 +33,9 @@ Trong giao diện chương trình, mỗi hành động được áp dụng và h
 Một giải pháp tốt nên có ít bước và chi phí nhỏ nhất (nếu xét chi phí).
 
 #### 2.1.3. Nhận xét về hiệu suất các thuật toán trong nhóm này
+
+![Uninformed Search](images/uninformed_search_results.jpg)
+
 | Thuật toán | Ưu điểm                                                    | Nhược điểm                               | Quan sát thực tế                         |
 | ---------- | ---------------------------------------------------------- | ---------------------------------------- | ---------------------------------------- |
 | **BFS**    | Luôn tìm lời giải ngắn nhất (nếu chi phí bằng nhau)        | Tốn bộ nhớ nhiều                         | Mất \~0.73s, 23 bước                     |
@@ -50,6 +53,9 @@ UCS hữu ích nếu bài toán có chi phí bước đi khác nhau.
 IDS là lựa chọn hợp lý nếu muốn giảm bộ nhớ mà vẫn tìm được lời giải ngắn.
 
 ### 2.2. Các thuật toán Tìm kiếm có thông tin (A* Search, IDA*, Greedy Best-First Search)
+
+![Informed Search](images/informed_search_results.jpg)
+
 | Thuật toán                   | Ưu điểm nổi bật                                               | Nhược điểm                                              | Quan sát thực tế                                      |
 | ---------------------------- | ------------------------------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------- |
 | **Greedy Best-First Search** | Nhanh, thường tìm lời giải sớm nhờ heuristic (hàm đánh giá)   | Không đảm bảo tìm lời giải tối ưu (chọn ngắn nhưng sai) | Thời gian thấp (\~0.23s), nhưng dài tới 79 bước       |
@@ -76,6 +82,8 @@ Greedy chỉ dùng f(n) = h(n)
 
 ### 2.3. Các thuật toán Tìm kiếm cục bộ
 (Simple Hill Climbing, Steepest Ascent Hill Climbing, Stochastic Hill Climbing, Simulated Annealing, Local Beam Search, Genetic Algorithm)
+
+![Local Search Results](images/local_search_results.jpg)
 
 📌 Nhận xét về hiệu suất khi áp dụng vào trò chơi 8 ô chữ:
 

@@ -241,19 +241,20 @@ Một bài toán ràng buộc (CSP) không tìm kiếm theo hành động từng
 | **Tập ràng buộc (Constraints)** | Các điều kiện mà các biến phải thỏa mãn. |
 
 📘 Ví dụ đơn giản:
-Biến: A, B, C
 
-Miền: {1, 2, 3}
+&nbsp;&nbsp;&nbsp;Biến: A, B, C
 
-Ràng buộc:
+&nbsp;&nbsp;&nbsp;Miền: {1, 2, 3}
 
-A ≠ B
+&nbsp;&nbsp;&nbsp;Ràng buộc:
 
-B ≠ C
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A ≠ B
 
-A ≠ C
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B ≠ C
 
-👉 Bài toán yêu cầu tìm giá trị cho A, B, C sao cho không có 2 biến nào trùng nhau.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A ≠ C
+
+&nbsp;&nbsp;&nbsp;👉 Bài toán yêu cầu tìm giá trị cho A, B, C sao cho không có 2 biến nào trùng nhau.
 
 #### 2.7.2. Thuật toán AC-3 là gì ?
 
@@ -261,13 +262,13 @@ AC-3 (Arc Consistency 3) là một thuật toán lọc miền giá trị để �
 
 📌 Cơ chế hoạt động của AC-3:
 
-Xét tất cả các cặp biến có ràng buộc (Xi, Xj)
+&nbsp;&nbsp;&nbsp;Xét tất cả các cặp biến có ràng buộc (Xi, Xj)
 
-Với mỗi cặp, kiểm tra xem tất cả giá trị trong Xi có “hợp lệ” với ít nhất 1 giá trị của Xj không
+&nbsp;&nbsp;&nbsp;Với mỗi cặp, kiểm tra xem tất cả giá trị trong Xi có “hợp lệ” với ít nhất 1 giá trị của Xj không
 
-Nếu có giá trị trong miền Xi mà không còn tương thích với Xj nào → loại bỏ nó khỏi miền Xi
+&nbsp;&nbsp;&nbsp;Nếu có giá trị trong miền Xi mà không còn tương thích với Xj nào → loại bỏ nó khỏi miền Xi
 
-Quá trình này lặp lại cho đến khi không còn thay đổi nào.
+&nbsp;&nbsp;&nbsp;Quá trình này lặp lại cho đến khi không còn thay đổi nào.
 
 #### 2.7.3. Solution là gì ?
 
@@ -275,9 +276,9 @@ Solution của bài toán CSP là một ánh xạ từ biến → giá trị, sa
 
 Nếu dùng AC-3:
 
-Có thể đơn giản bài toán trước bằng cách giảm miền
+&nbsp;&nbsp;&nbsp;Có thể đơn giản bài toán trước bằng cách giảm miền
 
-Sau đó kết hợp với các kỹ thuật khác như Backtracking, Forward Checking để tìm lời giải đầy đủ
+&nbsp;&nbsp;&nbsp;Sau đó kết hợp với các kỹ thuật khác như Backtracking, Forward Checking để tìm lời giải đầy đủ
 
 🧠 Tóm tắt:
 
@@ -307,44 +308,45 @@ Bài toán CSP (Constraint Satisfaction Problem – bài toán thỏa mãn ràng
 Forward Checking (FC) là một kỹ thuật hỗ trợ trong quá trình tìm kiếm lời giải CSP, dùng để phát hiện mâu thuẫn sớm bằng cách cập nhật miền (domain) của các biến chưa gán ngay sau mỗi lần gán.
 
 📘 Cách hoạt động của Forward Checking:
-Khi gán một giá trị cho biến X, Forward Checking sẽ:
+&nbsp;&nbsp;&nbsp;Khi gán một giá trị cho biến X, Forward Checking sẽ:
 
-Dò qua các biến chưa gán nhưng có ràng buộc với X
+&nbsp;&nbsp;&nbsp;Dò qua các biến chưa gán nhưng có ràng buộc với X
 
-Loại bỏ khỏi domain của các biến đó những giá trị không còn hợp lệ (dẫn đến vi phạm ràng buộc)
+&nbsp;&nbsp;&nbsp;Loại bỏ khỏi domain của các biến đó những giá trị không còn hợp lệ (dẫn đến vi phạm ràng buộc)
 
-Nếu một biến bị rút gọn domain về rỗng, thì biết rằng lựa chọn hiện tại là sai → backtrack sớm
+&nbsp;&nbsp;&nbsp;Nếu một biến bị rút gọn domain về rỗng, thì biết rằng lựa chọn hiện tại là sai → backtrack sớm
 
 🧠 Ví dụ đơn giản:
-Biến: A, B, C
 
-Miền: {1, 2, 3}
+&nbsp;&nbsp;&nbsp;Biến: A, B, C
 
-Ràng buộc: A ≠ B, B ≠ C, A ≠ C
+&nbsp;&nbsp;&nbsp;Miền: {1, 2, 3}
 
-Quá trình:
+&nbsp;&nbsp;&nbsp;Ràng buộc: A ≠ B, B ≠ C, A ≠ C
 
-Gán A = 1
+&nbsp;&nbsp;&nbsp;Quá trình:
 
-FC sẽ:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gán A = 1
 
-Loại 1 khỏi domain của B và C
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FC sẽ:
 
-Nếu còn domain hợp lệ → tiếp tục
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loại 1 khỏi domain của B và C
 
-Nếu có domain nào rỗng → backtrack
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nếu còn domain hợp lệ → tiếp tục
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nếu có domain nào rỗng → backtrack
 
 #### 2.8.3. Solution là gì ?
 
 Solution của bài toán CSP khi dùng Forward Checking là một gán giá trị hoàn chỉnh cho tất cả các biến sao cho mọi ràng buộc đều được thỏa mãn.
 
-ward Checking không thay đổi định nghĩa solution, mà chỉ tăng hiệu quả tìm kiếm bằng cách:
+Forward Checking không thay đổi định nghĩa solution, mà chỉ tăng hiệu quả tìm kiếm bằng cách:
 
-Dò mâu thuẫn sớm
+&nbsp;&nbsp;&nbsp;Dò mâu thuẫn sớm
 
-Cắt nhánh tìm kiếm không cần thiết
+&nbsp;&nbsp;&nbsp;Cắt nhánh tìm kiếm không cần thiết
 
-Kết hợp tốt với Backtracking
+&nbsp;&nbsp;&nbsp;Kết hợp tốt với Backtracking
 
 ### 2.9. Constraint Satisfaction Problem (CSP): Backtracking
 
@@ -364,32 +366,32 @@ Trong CSP (Constraint Satisfaction Problem), bài toán được định nghĩa 
 Backtracking là một kỹ thuật giải bài toán CSP bằng cách gán giá trị tuần tự cho từng biến, và lùi lại (backtrack) khi phát hiện vi phạm ràng buộc.
 
 📘 Cách hoạt động:
-Bắt đầu với biến đầu tiên chưa gán
+&nbsp;&nbsp;&nbsp;Bắt đầu với biến đầu tiên chưa gán
 
-Thử từng giá trị trong domain
+&nbsp;&nbsp;&nbsp;Thử từng giá trị trong domain
 
-Kiểm tra ràng buộc với các biến đã gán
+&nbsp;&nbsp;&nbsp;Kiểm tra ràng buộc với các biến đã gán
 
-Nếu hợp lệ → tiếp tục với biến kế tiếp
+&nbsp;&nbsp;&nbsp;Nếu hợp lệ → tiếp tục với biến kế tiếp
 
-Nếu không có giá trị hợp lệ → quay lui (backtrack) về biến trước để thử giá trị khác
+&nbsp;&nbsp;&nbsp;Nếu không có giá trị hợp lệ → quay lui (backtrack) về biến trước để thử giá trị khác
 
 🧠 Ví dụ đơn giản:
-Biến: A, B, C
+&nbsp;&nbsp;&nbsp;Biến: A, B, C
 
-Miền: {1, 2, 3}
+&nbsp;&nbsp;&nbsp;Miền: {1, 2, 3}
 
-Ràng buộc: A ≠ B, B ≠ C, A ≠ C
+&nbsp;&nbsp;&nbsp;Ràng buộc: A ≠ B, B ≠ C, A ≠ C
 
-Quy trình:
+&nbsp;&nbsp;&nbsp;Quy trình:
 
-Gán A = 1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gán A = 1
 
-Gán B = 2 → hợp lệ
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gán B = 2 → hợp lệ
 
-Gán C = 1 → vi phạm A ≠ C
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gán C = 1 → vi phạm A ≠ C
 
-Backtrack: thử C = 3 → hợp lệ → kết thúc
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Backtrack: thử C = 3 → hợp lệ → kết thúc
 
 #### 2.9.3. Solution là gì ?
 
@@ -428,15 +430,15 @@ Bài toán được mô hình hóa thành một MDP (Markov Decision Process) v�
 
 Sau khi agent thực hiện hành động a tại trạng thái s, nhận phần thưởng r và chuyển đến trạng thái mới s', ta cập nhật:
 
-Q(s, a) ← Q(s, a) + α [r + γ * max_a' Q(s', a') - Q(s, a)]
+&nbsp;&nbsp;&nbsp;Q(s, a) ← Q(s, a) + α [r + γ * max_a' Q(s', a') - Q(s, a)]
 
 Trong đó:
 
-α là learning rate (tốc độ học)
+&nbsp;&nbsp;&nbsp;α là learning rate (tốc độ học)
 
-γ là discount factor (mức độ ưu tiên tương lai)
+&nbsp;&nbsp;&nbsp;γ là discount factor (mức độ ưu tiên tương lai)
 
-max_a' Q(s', a') là giá trị hành động tốt nhất ở trạng thái kế tiếp
+&nbsp;&nbsp;&nbsp;max_a' Q(s', a') là giá trị hành động tốt nhất ở trạng thái kế tiếp
 
 #### 2.10.2. Solution là gì ?
 
@@ -448,15 +450,15 @@ Tức là: tại mỗi trạng thái, chọn hành động có giá trị Q lớ
 
 🔁 Q-learning hoạt động như thế nào?
 
-Bắt đầu ở một trạng thái s
+&nbsp;&nbsp;&nbsp;Bắt đầu ở một trạng thái s
 
-Chọn hành động a (theo chính sách ε-greedy)
+&nbsp;&nbsp;&nbsp;Chọn hành động a (theo chính sách ε-greedy)
 
-Thực hiện a, nhận r, chuyển đến s'
+&nbsp;&nbsp;&nbsp;Thực hiện a, nhận r, chuyển đến s'
 
-Cập nhật Q(s, a) bằng công thức học
+&nbsp;&nbsp;&nbsp;Cập nhật Q(s, a) bằng công thức học
 
-Lặp lại cho nhiều bước / tập huấn luyện
+&nbsp;&nbsp;&nbsp;Lặp lại cho nhiều bước / tập huấn luyện
 
 ## 3. Kết luận
 

@@ -158,17 +158,17 @@ Solution là một kế hoạch có điều kiện (contingent plan), gồm các
 
 Tức là:
 
-- Không phải một chuỗi cố định [a1, a2, ..., an]
+&nbsp;Không phải một chuỗi cố định [a1, a2, ..., an]
 
-- Mà là một cây kế hoạch dạng:
+&nbsp;Mà là một cây kế hoạch dạng:
 
- - Thực hiện a1
+&nbsp;&nbsp;Thực hiện a1
 
-  - → nếu quan sát o1: làm a2
+&nbsp;&nbsp;&nbsp;→ nếu quan sát o1: làm a2
 
-  - → nếu quan sát o2: làm a3
+&nbsp;&nbsp;&nbsp;→ nếu quan sát o2: làm a3
 
-  - ...
+&nbsp;&nbsp;&nbsp;...
 
 Kế hoạch phải đảm bảo rằng: Dù agent bắt đầu ở bất kỳ trạng thái nào phù hợp với thông tin ban đầu, sau một chuỗi hành động và quan sát, agent sẽ biết chắc mình đang ở trạng thái goal.
 
